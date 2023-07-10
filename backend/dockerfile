@@ -5,7 +5,6 @@ COPY tsconfig.json ./
 COPY ./ ./
 RUN ls -a
 RUN yarn install
-CMD ["yarn", "seed:run"]
 RUN yarn build
 
 FROM node:16.14
@@ -13,5 +12,4 @@ WORKDIR /app
 COPY package.json ./
 RUN yarn install --production=true
 COPY --from=builder /app/dist .
-COPY --from=builder /app/.env .
 CMD ["node", "src/bootstrap.js"]
