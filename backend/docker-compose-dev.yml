@@ -1,0 +1,33 @@
+version: "3"
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./
+      dockerfile: dockerfile.dev
+    ports:
+      - "5000:5000"
+    volumes:
+      - /app/node_modules
+      - ./:/app
+    command: sh -c "yarn seed:run && yarn dev"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - DB_HOST=mysql
+
+  mysql:
+    container_name: mysql
+    build: ../mysql
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=chan2461
+    volumes:
+      - ../mysql/sqls/:/docker-entrypoint-initdb.d/
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10

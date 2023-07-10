@@ -1,0 +1,8 @@
+import "./createPost/CreatePostController"
+import "./deletePost/DeletePostController"
+import "./getManyPosts/GetManyPostsController"
+import "./getPost/GetPostController"
+import "./updatePost/UpdatePostController"
+import "./upvotePost/UpvotePostController"
+import "./downvotePost/DownvotePostController"
+import "./deletePostVote/DeletePostVoteController"

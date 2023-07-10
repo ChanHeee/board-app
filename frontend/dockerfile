@@ -1,0 +1,13 @@
+FROM node:alpine as builder
+WORKDIR /app
+COPY ./package.json ./
+RUN yarn install
+COPY . .
+RUN yarn build
+
+FROM node:16.14
+WORKDIR /app
+COPY package.json ./
+RUN yarn install --production=true
+COPY --from=builder /app/build .
+CMD ["yarn", "start"]
