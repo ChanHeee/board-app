@@ -11,6 +11,11 @@ services:
     image: pch0989/board-app-backend
     expose:
       - "5000"
+    environment:
+      MYSQL_HOST: $MYSQL_HOST
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
 
   nginx:
     container_name: nginx
