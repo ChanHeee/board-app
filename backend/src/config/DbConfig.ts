@@ -8,12 +8,12 @@ import { CommentVoteEntity } from "../modules/comment/infrastructure/CommentVote
 
 export const AppDataSource = new DataSource({
   type: "mysql",
-  host: process.env.DB_HOST || "localhost",
-  port: 3306,
-  username: "root",
+  host: process.env.MYSQL_HOST
+  port: process.env.MYSQL_PORT,
+  username: process.env.MYSQL_USER
   password: process.env.MYSQL_ROOT_PASSWORD,
-  database: "board-app",
-  synchronize: true,
+  database: process.env.MYSQL_DATABASE,
+  synchronize: false,
   logging: false,
   entities: [
     PostEntity,
