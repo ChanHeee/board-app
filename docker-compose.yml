@@ -16,6 +16,8 @@ services:
       MYSQL_USER: $MYSQL_USER
       MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
       MYSQL_DATABASE: $MYSQL_DATABASE
+      COOKIE_SECRET: $COOKIE_SECRET
+      JWT_SECRET: $JWT_SECRET
 
   nginx:
     container_name: nginx
