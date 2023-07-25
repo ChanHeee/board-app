@@ -124,7 +124,7 @@
           class={data.total > data.comments.length ? "" : "hidden"}
           on:click={async () => {
             const response = await fetch(
-              `http://localhost:5000/api/comments/parent/${post.id}?skip=${data.comments.length}`
+              `http://board-app.ap-northeast-2.elasticbeanstalk.com/api/comments/parent/${post.id}?skip=${data.comments.length}`
             )
             if (response.status == 200) {
               const { comments: moreComments } = await response.json()
