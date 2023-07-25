@@ -1,6 +1,7 @@
 <script>
   import { enhance } from "$app/forms"
   $: categories = []
+  $: console.log(categories)
 
   export let form
 
@@ -68,8 +69,10 @@
           class="flex max-h-[28px] whitespace-nowrap truncate items-center text-sm bg-zinc-400 px-3 py-[3px] gap-x-1"
         >
           <div
-            on:click={() => {
-              categories = [...categories.filter((item) => item != name)]
+            on:click={(e) => {
+              categories = categories.filter(
+                (item) => item != e.target.parentNode.parentNode.innerText
+              )
             }}
             on:keydown={undefined}
             on:keyup={undefined}
@@ -83,6 +86,16 @@
             >
               <path
                 d="M64 388L196 256 64 124 96 92 228 224 360 92 392 124 260 256 392 388 360 420 228 288 96 420 64 388Z"
+                on:click={(e) => {
+                  categories = categories.filter(
+                    (item) =>
+                      item !=
+                      e.target.parentNode.parentNode.parentNode.innerText
+                  )
+                }}
+                on:keydown={undefined}
+                on:keyup={undefined}
+                on:keypress={undefined}
               />
             </svg>
           </div>
