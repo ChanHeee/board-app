@@ -9,7 +9,7 @@
 
   const getChildCommentsHandler = async (commentId, skip) => {
     const response = await fetch(
-      `http://nginx/api/comments/child/${commentId}?skip=${skip}`
+      `http://board-app.ap-northeast-2.elasticbeanstalk.com/api/comments/child/${commentId}?skip=${skip}`
     )
     if (response.status == 200) {
       const { comments: moreComments } = await response.json()
