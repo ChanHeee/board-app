@@ -1,5 +1,4 @@
 import { redirect } from "@sveltejs/kit"
-import axios from "axios"
 
 export const actions = {
   default: async ({ request, cookies, fetch }) => {
@@ -19,7 +18,12 @@ export const actions = {
 
     if (response.status == 200) {
       const token = (await response.json()).token
-      cookies.set("token", token)
+      cookies.set("token", token, {
+        httpOnly: true,
+        secure: false,
+        path: "/",
+        maxAge: 60 * 30,
+      })
       throw redirect(303, "/posts")
     } else {
       return { success: false }
