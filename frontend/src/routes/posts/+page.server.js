@@ -16,7 +16,6 @@ export const load = async ({ url, locals, fetch }) => {
       headers: { Authorization: token ? `Bearer ${token}` : null },
     }
   )
-  console.log(response)
   if (response.status == 200) {
     postsData = await response.json()
   }

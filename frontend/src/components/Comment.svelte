@@ -3,13 +3,15 @@
 
   import VoteForComment from "./VoteForComment.svelte"
 
+  export let baseUrl
+
   export let comment
   export let divClass = ""
   export let replyToCommentHandler = undefined
 
   const getChildCommentsHandler = async (commentId, skip) => {
     const response = await fetch(
-      `http://board-app.ap-northeast-2.elasticbeanstalk.com/api/comments/child/${commentId}?skip=${skip}`
+      `${baseUrl}/api/comments/child/${commentId}?skip=${skip}`
     )
     if (response.status == 200) {
       const { comments: moreComments } = await response.json()
