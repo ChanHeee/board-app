@@ -32,7 +32,7 @@
     </form>
   {:else}
     <form
-      action="?/downvoteComment"
+      action="?/upvoteComment"
       method="post"
       use:enhance={({ data }) => {
         data.set("commentId", commentId)
@@ -92,7 +92,7 @@
     </form>
   {:else}
     <form
-      action="?/deleteComment"
+      action="?/downvoteComment"
       method="post"
       use:enhance={({ data }) => {
         data.set("commentId", commentId)
