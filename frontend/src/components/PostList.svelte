@@ -1,14 +1,7 @@
 <script>
-  import { enhance } from "$app/forms"
   import Vote from "./Vote.svelte"
 
   export let posts
-
-  const upvote = async () => {
-    await fetch("http://nginx/api/posts/upvote")
-  }
-
-  let text = ""
 </script>
 
 <div class="posts pb-5">

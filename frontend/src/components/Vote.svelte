@@ -67,19 +67,6 @@
   >
     <p>{count}</p>
   </h1>
-  <!-- {#if like == true}
-    <h1 class={`font-bold text-center text-[${UP_COLOR}]`}>
-      {count}
-    </h1>
-  {:else if like == false}
-    <h1>
-      {count}
-    </h1>
-  {:else}
-    <h1 class={`font-bold text-center text-[${DEFAULT_COLOR}]`}>
-      {count}
-    </h1>
-  {/if} -->
 
   {#if like == false}
     <form

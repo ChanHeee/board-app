@@ -14,7 +14,12 @@
       </span>
     </p>
     <div class="flex items-center gap-2 text-zinc-500 mb-1">
-      <VoteForComment count={113} like={true} divClass="text-black" />
+      <VoteForComment
+        count={comment.point}
+        like={comment.like}
+        divClass="text-black"
+        commentId={comment.id}
+      />
     </div>
   </div>
 </div>

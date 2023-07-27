@@ -146,4 +146,67 @@ export const actions = {
 
     return
   },
+  upvoteComment: async ({ request, locals }) => {
+    const token = locals.token
+    if (!token) {
+      return
+    }
+
+    const data = await request.formData()
+    const commentId = data.get("commentId")
+
+    const response = await fetch(
+      `http://nginx/api/comments/${commentId}/upvote`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+
+    if (response.status == 200) {
+      return { success: true, post: (await response.json()).post }
+    }
+  },
+  downvoteComment: async ({ request, locals }) => {
+    const token = locals.token
+    if (!token) {
+      return
+    }
+
+    const data = await request.formData()
+    const commentId = data.get("commentId")
+
+    await fetch(`http://nginx/api/comments/${commentId}/downvote`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+
+    return
+  },
+  deleteComment: async ({ request, locals }) => {
+    const token = locals.token
+    if (!token) {
+      return
+    }
+
+    const data = await request.formData()
+    const commentId = data.get("commentId")
+
+    await fetch("http://nginx/api/comments/vote", {
+      method: "DELETE",
+      body: JSON.stringify({ commentId }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+
+    return
+  },
 }
