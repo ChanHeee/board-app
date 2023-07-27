@@ -2,16 +2,18 @@
   import ChildComment from "./ChildComment.svelte"
 
   import VoteForComment from "./VoteForComment.svelte"
-
+  export let data
   export let baseUrl
-
   export let comment
   export let divClass = ""
   export let replyToCommentHandler = undefined
 
+  $: token = data.token
+
   const getChildCommentsHandler = async (commentId, skip) => {
     const response = await fetch(
-      `/api/comments/child/${commentId}?skip=${skip}`
+      `/api/comments/child/${commentId}?skip=${skip}`,
+      { headers: { Authorization: token ? `Bearer ${token}` : null } }
     )
     if (response.status == 200) {
       const { comments: moreComments } = await response.json()
@@ -32,6 +34,7 @@
       <VoteForComment
         count={comment.point}
         like={comment.like}
+        commentId={comment.id}
         divClass="text-black"
       />
       <p class="text-xl font-thin">|</p>
