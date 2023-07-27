@@ -11,7 +11,7 @@
 
   const getChildCommentsHandler = async (commentId, skip) => {
     const response = await fetch(
-      `${baseUrl}/api/comments/child/${commentId}?skip=${skip}`
+      `/api/comments/child/${commentId}?skip=${skip}`
     )
     if (response.status == 200) {
       const { comments: moreComments } = await response.json()
