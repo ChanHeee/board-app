@@ -9,6 +9,7 @@
   export let form
   $: post = data.post
   $: comments = data.comments
+  $: token = data.token
 
   let text
   let commentId
@@ -63,6 +64,7 @@
       {#each comments as comment}
         <Comment
           {comment}
+          {token}
           replyToCommentHandler={() => {
             commentId = comment.id
             text = ""

@@ -2,13 +2,11 @@
   import ChildComment from "./ChildComment.svelte"
 
   import VoteForComment from "./VoteForComment.svelte"
-  export let data
-  export let baseUrl
+
+  export let token
   export let comment
   export let divClass = ""
   export let replyToCommentHandler = undefined
-
-  $: token = data.token
 
   const getChildCommentsHandler = async (commentId, skip) => {
     const response = await fetch(
