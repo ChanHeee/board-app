@@ -19,6 +19,7 @@
       action="?/delete"
       method="post"
       use:enhance={({ data }) => {
+        up = null
         data.set("postId", postId)
       }}
     >
@@ -35,6 +36,7 @@
       action="?/upvote"
       method="post"
       use:enhance={({ data }) => {
+        down = null
         data.set("postId", postId)
       }}
     >
@@ -73,6 +75,7 @@
       action="?/delete"
       method="post"
       use:enhance={({ data }) => {
+        down = null
         data.set("postId", postId)
       }}
     >
@@ -94,6 +97,7 @@
       action="?/downvote"
       method="post"
       use:enhance={({ data }) => {
+        up = null
         data.set("postId", postId)
       }}
     >

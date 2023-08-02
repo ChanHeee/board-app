@@ -14,6 +14,7 @@ import { AuthRequest } from "../../../../shared/interface/AuthRequest"
 import { GetChildCommentsService } from "./GetChildCommentsService"
 import { BodyRequest } from "../../../../shared/interface/BodyRequest"
 import { GetChildCommentsRequest } from "./GetChildCommentsRequest"
+import { IncludeDecodedTokenIfExists } from "../../../../shared/middleware/authMiddleware"
 
 @controller("/api/comments")
 export class GetChildCommentsController implements interfaces.Controller {
@@ -22,7 +23,7 @@ export class GetChildCommentsController implements interfaces.Controller {
     private service: GetChildCommentsService
   ) {}
 
-  @httpGet("/child/:id")
+  @httpGet("/child/:id", IncludeDecodedTokenIfExists)
   async execute(
     @request() req: AuthRequest,
     @requestParam("id") id: number,

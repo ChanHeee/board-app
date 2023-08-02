@@ -10,9 +10,7 @@ export const load = async ({ cookies, locals }) => {
     user = (await response.json()).user
   }
 
-  console.log("\n\n", process.env.BASE_URL, "\n\n")
   return {
-    baseUrl: process.env.BASE_URL,
     user,
     token,
   }
