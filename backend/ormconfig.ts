@@ -6,10 +6,10 @@ import { PostVoteEntity } from "./src/modules/post/infrastructure/PostVoteEntity
 import { CommentVoteEntity } from "./src/modules/comment/infrastructure/CommentVoteEntity"
 module.exports = {
   type: "mysql",
-  host: process.env.DB_HOST,
+  host: process.env.MYSQL_HOST,
   port: 3306,
   username: "root",
-  password: "chan2461",
+  password: process.env.MYSQL_ROOT_PASSWORD,
   database: "board-app",
   entities: [
     PostEntity,
