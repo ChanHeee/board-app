@@ -4,20 +4,20 @@
 
 ### 백엔드
 
-<img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white">
-<img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">
+![title](https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white)
+![title](https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 
 ### 프론트엔드
 
-<img src="https://img.shields.io/badge/sveltekit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white">
+![title](https://img.shields.io/badge/sveltekit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
 
 ### 배포
 
-<img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
-<img src="https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=nginx&logoColor=white">
-<img src="https://img.shields.io/badge/AWS Beanstalk-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white">
-<img src="https://img.shields.io/badge/travis ci-3EAAAF?style=for-the-badge&logo=travisci&logoColor=white">
-<img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
+![title](https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![title](https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![title](https://img.shields.io/badge/AWS%20Beanstalk-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![title](https://img.shields.io/badge/travis%20ci-3EAAAF?style=for-the-badge&logo=travisci&logoColor=white)
+![title](https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## 화면구성
 
