@@ -6,7 +6,7 @@ import { CommentEntity } from "../modules/comment/infrastructure/CommentEntity"
 import { PostVoteEntity } from "../modules/post/infrastructure/PostVoteEntity"
 import { CommentVoteEntity } from "../modules/comment/infrastructure/CommentVoteEntity"
 
-const AppDataSource = new DataSource({
+export default new DataSource({
   type: "mysql",
   host: process.env.MYSQL_HOST,
   port: 3306,
@@ -27,5 +27,3 @@ const AppDataSource = new DataSource({
   subscribers: [],
   timezone: "local",
 })
-
-export default AppDataSource

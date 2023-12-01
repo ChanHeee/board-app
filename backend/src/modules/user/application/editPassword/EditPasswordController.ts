@@ -11,8 +11,7 @@ import {
 import { inject } from "inversify"
 import Types from "../../../../config/Types"
 import { Response } from "express"
-import { protect } from "../../../../shared/middleware/authMiddleware"
-import { AuthRequest } from "../../../../shared/interface/AuthRequest"
+import { EnsureAuthenticated } from "../../../../shared/middleware/authMiddleware"
 import { BadRequest } from "../../../../shared/util/exceptions"
 import { EditPasswordService } from "./EditPasswordService"
 import { BodyRequest } from "../../../../shared/interface/BodyRequest"
@@ -25,7 +24,7 @@ export class EditPasswordController implements interfaces.Controller {
     @inject(Types.EditPasswordService) private service: EditPasswordService
   ) {}
 
-  @httpPatch("/password", protect, validate(EditPasswordRequest))
+  @httpPatch("/password", EnsureAuthenticated, validate(EditPasswordRequest))
   async excute(
     @request() req: BodyRequest<EditPasswordRequest>,
     @response() res: Response

@@ -1,5 +1,6 @@
 import "./createUser/CreateUserController"
 import "./deleteUser/DeleteUserController"
+import "./updateUser/UpdateUserController"
 import "./editPassword/EditPasswordController"
 import "./getUser/GetUserController"
 import "./getCurrentUser/GetCurrentUserController"

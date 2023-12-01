@@ -6,7 +6,7 @@ services:
     expose:
       - "3000"
     environment:
-      BASE_URL: $BASE_URL
+      ORIGIN: http://board-app.ap-northeast-2.elasticbeanstalk.com
 
   backend:
     container_name: backend

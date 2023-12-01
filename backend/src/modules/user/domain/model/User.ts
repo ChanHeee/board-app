@@ -30,6 +30,13 @@ export class User {
     })
   }
 
+  update(props: createProps) {
+    const { username, password } = props
+    this.username = username
+    this.password = UserPassword.create(password)
+    this.updatedAt = new Date()
+  }
+
   editPassword(password: string) {
     this.password = UserPassword.create(password)
   }

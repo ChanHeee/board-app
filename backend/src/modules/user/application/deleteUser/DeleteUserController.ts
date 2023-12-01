@@ -11,7 +11,7 @@ import Types from "../../../../config/Types"
 
 import { Response } from "express"
 import { DeleteUserService } from "./DeleteUserService"
-import { protect } from "../../../../shared/middleware/authMiddleware"
+import { EnsureAuthenticated } from "../../../../shared/middleware/authMiddleware"
 import { AuthRequest } from "../../../../shared/interface/AuthRequest"
 
 @controller("/api/users")
@@ -20,9 +20,13 @@ export class DeleteUserController implements interfaces.Controller {
     @inject(Types.DeleteUserService) private service: DeleteUserService
   ) {}
 
-  @httpDelete("/", protect)
+  @httpDelete("/", EnsureAuthenticated)
   async excute(@request() req: AuthRequest, @response() res: Response) {
-    await this.service.execute(req.user.id)
-    return res.status(204).end()
+    const result = await this.service.execute(req.user.id)
+    if (result) {
+      return res.status(204).end()
+    } else {
+      return res.status(400).end()
+    }
   }
 }

@@ -14,7 +14,7 @@ export class CreateUserService {
   ) {}
 
   async execute(dto: CreateUserRequest): Promise<UserResponse> {
-    const { email, username, password } = dto
+    const { email, username } = dto
     let exUser = await this.userRepository.findByEmail(email)
     if (exUser) {
       throw new Conflict(`Email {${email}} is already registered.`)

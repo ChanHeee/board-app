@@ -4,7 +4,7 @@ services:
     container_name: backend
     build:
       context: ./
-      dockerfile: dockerfile.dev
+      dockerfile: dockerfile.test
     ports:
       - "5000:5000"
     volumes:
@@ -15,6 +15,7 @@ services:
       - MYSQL_USER=root
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=board-app
+    command: sh -c "yarn seed && yarn dev"
     depends_on:
       mysql:
         condition: service_healthy

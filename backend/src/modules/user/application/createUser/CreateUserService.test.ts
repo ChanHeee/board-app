@@ -2,7 +2,6 @@ import { CreateUserService } from "./CreateUserService"
 import { mock, mockClear } from "jest-mock-extended"
 import { User } from "../../domain/model/User"
 import { UserRepository } from "../../domain/repository/UserRepository"
-import { UserPassword } from "../../domain/model/UserPassword"
 import { CreateUserRequest } from "./CreateUserRequest"
 import { Conflict } from "../../../../shared/util/exceptions"
 
@@ -33,6 +32,7 @@ describe("CreateUserService", () => {
   })
 
   it("it should throw Conflict Error when email is already used", async () => {
+    //arrange
     const email = "new@example.com"
     const username = "new"
     const password = "password"
@@ -48,6 +48,7 @@ describe("CreateUserService", () => {
   })
 
   it("it should throw Conflict Error when username is already used", async () => {
+    //arrange
     const email = "new@example.com"
     const username = "new"
     const password = "password"

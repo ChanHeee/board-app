@@ -14,10 +14,7 @@ import { PostRequest } from "../PostRequest"
 import { PostResponse } from "../PostResponse"
 import { validate } from "../../../../shared/middleware/validationMiddleware"
 import { AuthRequest } from "../../../../shared/interface/AuthRequest"
-import {
-  EnsureAuthenticated,
-  protect,
-} from "../../../../shared/middleware/authMiddleware"
+import { EnsureAuthenticated } from "../../../../shared/middleware/authMiddleware"
 import { CreatePostService } from "./CreatePostService"
 import { BodyRequest } from "../../../../shared/interface/BodyRequest"
 import { CreatePostRequest } from "./CreatePostRequest"

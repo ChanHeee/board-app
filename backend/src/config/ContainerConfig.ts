@@ -1,7 +1,6 @@
 import { Container } from "inversify"
 import { DataSource } from "typeorm"
 import Types from "./Types"
-import { AppDataSource } from "./DbConfig"
 import { App } from "../app"
 import { CreatePostService } from "../modules/post/application/createPost/CreatePostService"
 import { PostRepository } from "../modules/post/domain/repository/PostRepository"
@@ -40,6 +39,8 @@ import { CommentVoteOrmRepository } from "../modules/comment/infrastructure/Comm
 import { UpvoteCommentService } from "../modules/comment/application/upvoteComment/UpvoteCommentService"
 import { DownvoteCommentService } from "../modules/comment/application/downvoteComment/DownvoteCommentService"
 import { DeleteCommentVoteService } from "../modules/comment/application/deleteCommentVote/DeleteCommentVoteService"
+import AppDataSource from "./DbConfig"
+import { UpdateUserService } from "../modules/user/application/updateUser/UpdateUserService"
 
 let container = new Container()
 
@@ -86,6 +87,7 @@ container
 container.bind<CreateUserService>(Types.CreateUserService).to(CreateUserService)
 container.bind<GetUserService>(Types.GetUserService).to(GetUserService)
 container.bind<DeleteUserService>(Types.DeleteUserService).to(DeleteUserService)
+container.bind<UpdateUserService>(Types.UpdateUserService).to(UpdateUserService)
 container
   .bind<EditPasswordService>(Types.EditPasswordService)
   .to(EditPasswordService)

@@ -11,10 +11,7 @@ import {
 import { NextFunction, Request, Response } from "express"
 import Types from "../../../../config/Types"
 import { validate } from "../../../../shared/middleware/validationMiddleware"
-import {
-  protect,
-  EnsureAuthenticated,
-} from "../../../../shared/middleware/authMiddleware"
+import { EnsureAuthenticated } from "../../../../shared/middleware/authMiddleware"
 import { BodyRequest } from "../../../../shared/interface/BodyRequest"
 import { ReplyToCommentService } from "./ReplyToCommentService"
 import { ReplyToCommentRequest } from "./ReplyToCommentRequest"

@@ -1,11 +1,10 @@
 import { NextFunction, Request, Response } from "express"
 import { Conflict } from "../util/exceptions"
 import { validateSync } from "class-validator"
-import {
-  ClassConstructor,
-  classToPlain,
-  plainToInstance,
-} from "class-transformer"
+import { injectable, inject } from "inversify"
+import { BaseMiddleware } from "inversify-express-utils"
+import { plainToInstance } from "class-transformer"
+import { CreateUserRequest } from "../../modules/user/application/createUser/CreateUserRequest"
 
 export const validate =
   <T extends object>(classInstance: any) =>

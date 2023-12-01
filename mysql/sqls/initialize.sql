@@ -165,3 +165,19 @@ CREATE TABLE `user` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2023-06-12 18:41:23
+
+/* Seed for user */
+INSERT INTO user (id, email, password, username) VALUES (1, "user1@gmail.com", "temp", "user1");
+INSERT INTO user (id, email, password, username) VALUES (2, "user2@gmail.com", "temp", "user2");
+/* Seed for post */
+INSERT INTO post (id, title, content, userId) VALUES (1, "post title1", "content content1", 1);
+INSERT INTO post (id, title, content, userId) VALUES (2, "post title2", "content content2", 2);
+/* Seed for category */
+INSERT INTO category (id, name) VALUES (1, "one");
+INSERT INTO category (id, name) VALUES (2, "two");
+INSERT INTO category (id, name) VALUES (3, "three");
+
+INSERT INTO post_to_category (postId, categoryId) VALUES (1, 1), (1,2);
+INSERT INTO post_to_category (postId, categoryId) VALUES (2, 1), (2,2), (2,3);
+
+

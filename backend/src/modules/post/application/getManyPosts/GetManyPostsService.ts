@@ -13,7 +13,7 @@ export class GetManyPostsService {
   ) {}
 
   async execute(dto: GetManyPostsRequest): Promise<GetManyPostsResponse> {
-    const { skip, take, order, category, user, me } = dto.value
+    const { skip, take, order, category, user, me } = dto
     let posts, total
     if (category) {
       ;[posts, total] = await this.postRepository.findPostsByCategory(

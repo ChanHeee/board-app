@@ -26,10 +26,6 @@ export class CreateUserController implements interfaces.Controller {
     @request() req: BodyRequest<CreateUserRequest>,
     @response() res: Response
   ) {
-    console.log("===============RESISTER CONTROLLER===============")
-    console.log("request from frontend", req.headers)
-    console.log("=================================================\n\n")
-
     const dto = new CreateUserRequest({ ...req.body })
     try {
       const user = await this.service.execute(dto)

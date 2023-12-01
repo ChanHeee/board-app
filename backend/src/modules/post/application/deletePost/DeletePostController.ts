@@ -7,11 +7,11 @@ import {
   response,
 } from "inversify-express-utils"
 import { Response } from "express"
-import { protect } from "../../../../shared/middleware/authMiddleware"
+import { EnsureAuthenticated } from "../../../../shared/middleware/authMiddleware"
 import Types from "../../../../config/Types"
 import { DeletePostService } from "./DeletePostService"
 
-@controller("/api/posts", protect)
+@controller("/api/posts", EnsureAuthenticated)
 export class DeletePostController implements interfaces.Controller {
   constructor(
     @inject(Types.DeletePostService)

@@ -27,6 +27,7 @@ const Types = {
   CreateUserService: Symbol("CreateUserService"),
   GetUserService: Symbol("GetUserService"),
   DeleteUserService: Symbol("DeleteUserService"),
+  UpdateUserService: Symbol("UpdateUserService"),
   EditPasswordService: Symbol("EditPasswordService"),
   UserRepository: Symbol("UserRepository"),
 

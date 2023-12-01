@@ -6,7 +6,7 @@
     "dev": "vite dev --port 3000 --host",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "ORIGIN=http://board-app.ap-northeast-2.elasticbeanstalk.com node index.js"
+    "start": "node index.js"
   },
   "devDependencies": {
     "@popperjs/core": "^2.11.6",
