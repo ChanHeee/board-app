@@ -85,7 +85,13 @@ express + sveltekit 웹 SNS 사이트
 
 - 게시글과 댓글에 추천이나 비추천
 
-## ❗️ 구현 시 고려한 점
+## ❗️ 구현 내용 및 고려한 점
+
+#### JWT를 사용한 인가
+
+- 로그인 시 토큰 발급
+- 모든 요청 시 request authorization 헤더에 추가하여 요청
+- EnsureAuthenticated, IncludeDecodedTokenIfExists와 같은 권한에 따른 미들웨어 사용
 
 #### Dependency Injection
 
@@ -97,7 +103,11 @@ express + sveltekit 웹 SNS 사이트
 - domain, application, infrastructure 레이어로 구분
 -
 
-#### Multi Container
+#### Docker, AWS beanstalk, Travis CI를 사용한 배포
+
+- .travis.yml
+  - q
+- docker-compose.yml
 
 ## ❓ 더 생각해볼 점
 
