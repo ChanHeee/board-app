@@ -1,25 +1,26 @@
 # Board-APP
 
-## 사용한 기술스택
+express + sveltekit 웹 SNS 사이트
+
+## ⚒️ 사용한 기술스택
 
 ### 백엔드
 
-<img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white">
-<img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">
+![express](https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white)
 
 ### 프론트엔드
 
-<img src="https://img.shields.io/badge/sveltekit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white">
+![sveltekit](https://img.shields.io/badge/sveltekit-FF3E00?style=for-the-badge&logo=svelte&logoColor=white)
 
 ### 배포
 
-<img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
-<img src="https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=nginx&logoColor=white">
-<img src="https://img.shields.io/badge/AWS Beanstalk-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white">
-<img src="https://img.shields.io/badge/travis ci-3EAAAF?style=for-the-badge&logo=travisci&logoColor=white">
-<img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
+![docker](https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![nginx](https://img.shields.io/badge/nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+![awsBeanstalk](https://img.shields.io/badge/AWS%20Beanstalk-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![travisCi](https://img.shields.io/badge/travis%20ci-3EAAAF?style=for-the-badge&logo=travisci&logoColor=white)
+![vercel](https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-## 화면구성
+## 📷 화면구성
 
 <table>
   <tr>
@@ -39,9 +40,6 @@
     <image width=200 src="images/detail2.png">
     </td>
   </tr>
-  <td id="br" colspan=3 border-left=0>
-    
-  </tr>
   <th>생성</th>
   <th>로그인</th>
   <th>회원가입</th>
@@ -60,8 +58,47 @@
   </tbody>
 </table>
 
-<style>
-    #br {
-        border: none
-    }
-</style>
+## ⚙️서버구성도
+
+<image src="images/서버구성도.png">
+
+## 📌 주요 기능
+
+#### 회원가입
+
+- Value Object를 사용한 비밀번호 유효성 검사
+
+#### 로그인
+
+- jwt 사용
+- 로그인 시 쿠키 및 세션 생성
+
+#### 게시글 생성
+
+- 해시태그 기능
+
+#### 댓글
+
+- 로그인한 사용자는 게시글에 댓글 기능
+
+#### 추천
+
+- 게시글과 댓글에 추천이나 비추천
+
+## ❗️ 구현 시 고려한 점
+
+#### Dependency Injection
+
+- DI컨테이너를 사용한 의존성 주입
+-
+
+#### Layered Architecture
+
+- domain, application, infrastructure 레이어로 구분
+-
+
+#### Multi Container
+
+## ❓ 더 생각해볼 점
+
+#### 프로젝트 규모에 맞는 구현
