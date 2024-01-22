@@ -15,7 +15,7 @@ services:
       - MYSQL_USER=root
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=board-app
-    command: sh -c "yarn seed && yarn dev"
+    command: yarn test
     depends_on:
       mysql:
         condition: service_healthy

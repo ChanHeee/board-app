@@ -5,11 +5,11 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -f ./backend/dockerfile.test -t pch0989/backend-test-app ./backend
+# before_install:
+#   - docker build -f ./backend/dockerfile.test -t pch0989/backend-test-app ./backend
 
 script:
-  - docker run pch0989/backend-test-app
+  - docker-compose -f ./backend/docker-compose-test.yml up --build
 
 after_success:
   - docker build -t pch0989/board-app-frontend ./frontend
